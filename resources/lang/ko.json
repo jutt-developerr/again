@@ -1,0 +1,6 @@
+{
+    "trip_start_time": "여행 시작 시간",
+    "trip_end_time": "여행 종료 시간",
+    "Please Complete the shape before submit": "좌표가 이미 존재 영역과 함께 존재합니다.",
+    "Coordinates already exists with our exists zone": "좌표가 이미 존재 영역과 함께 존재합니다."
+}

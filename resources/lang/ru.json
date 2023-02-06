@@ -1,0 +1,6 @@
+{
+    "trip_start_time": "Время начала поездки",
+    "trip_end_time": "Время окончания поездки",
+    "Please Complete the shape before submit": "Координаты уже существуют с нашей зоной существования",
+    "Coordinates already exists with our exists zone": "Координаты уже существуют с нашей зоной существования"
+}

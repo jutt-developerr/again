@@ -1,0 +1,6 @@
+{
+    "trip_start_time": "行程开始时间",
+    "trip_end_time": "行程结束时间",
+    "Please Complete the shape before submit": "坐标已经存在于我们的存在区域",
+    "Coordinates already exists with our exists zone": "坐标已经存在于我们的存在区域"
+}

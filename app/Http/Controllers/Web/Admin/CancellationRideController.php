@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Http\Controllers\Web\Admin;
+
+use App\Base\Filters\Admin\RequestFilter;
+use App\Base\Filters\Admin\RequestCancellationFilter;
+use App\Base\Filters\Master\CommonMasterFilter;
+use App\Base\Libraries\QueryFilter\QueryFilterContract;
+use App\Http\Controllers\Controller;
+use App\Models\Request\Request as RequestRequest;
+use App\Models\Request\RequestCancellationFee;
+use App\Models\Admin\CancellationReason;
+use Illuminate\Http\Request;
+use App\Base\Constants\Setting\Settings;
+
+class CancellationRideController extends Controller
+{
+    public function index()
+    {
+        $page = trans('pages_names.cancellation_rides');
+        $main_menu = 'trip-request';
+        $sub_menu = 'cancellation-rides';
+
+        return view('admin.cancellation-rides.index', compact('page', 'main_menu', 'sub_menu'));
+    }
+
+    public function getAllRides(QueryFilterContract $queryFilter)
+    {
+        $query = RequestRequest::companyKey()->whereIsCompleted(false)->whereIsCancelled(true);
+        $results = $queryFilter->builder($query)->customFilter(new RequestFilter)->defaultSort('-created_at')->paginate();
+
+        return view('admin.cancellation-rides._rides', compact('results'));
+    }
+
+   
+     
+}
